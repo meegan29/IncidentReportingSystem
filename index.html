@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incident Reporting System</title>
-<head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Incident Reporting System</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+    
 <body class="bg-gray-100 p-6">
-    <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div class="max-w-7xl mx-auto bg-white p-8 rounded-lg shadow-md">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-2xl font-semibold text-[#468FB8]"><i class="fas fa-cloud"></i> Incident : INC-0034142</h1>
+            <h1 class="text-2xl font-semibold text-[#468FB8]"><i class="fas fa-infinity"></i> Incident : INC-0034142</h1>
             <div class="space-x-2">
-                <button class="bg-gray-100 text-gray-500 px-4 py-2 rounded-md"><i class="fas fa-save"></i> Save</button>
+                <button class="bg-gray-100 text-gray-500 px-4 py-2 rounded-md border border-gray-100"><i class="fas fa-save"></i> Save</button>
                 <button class="bg-white text-[#468FB8] px-4 py-2 rounded-md border border-gray-300"><i class="fas fa-times"></i> Close</button>
                 <button class="bg-white text-[#468FB8] px-4 py-2 rounded-md border border-gray-300"><i class="fas fa-plus"></i> New</button>
                 <button class="bg-white text-[#468FB8] px-4 py-2 rounded-md border border-gray-300"><i class="fas fa-wrench"></i></button>                
@@ -84,36 +84,45 @@
                 <h2 class="text-lg font-semibold text-[#468FB8]">Incident Details</h2></div>
             <div class="border-b-2 border-gray-300 mb-6"></div><br>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdQrvgCgzNkV5rpjBZLVGuX9e6qpEv2qOAs61l-JN4zyDOVjQ/formResponse" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">INSTITUTION WHERE INCIDENT OCCURRED</label>
+                        <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="KK Women's and Children's Hospital" readonly>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700" for="entry.1538204845">CAMPUS / SITE <span class="text-red-500">*</span></label>
+                        <input type="text" name="entry.1538204845" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-white" placeholder="Enter campus/site">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700" for="entry.1980119744">INCIDENT DATE <span class="text-red-500">*</span></label>
+                        <textarea name="entry.1980119744" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-white" rows="1" placeholder="DD/MM/YYYY"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700" for="entry.379030292">INCIDENT TIME (24HRS FORMAT) <span class="text-red-500">*</span></label>
+                        <textarea name="entry.379030292" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-white" rows="1" placeholder="HH:MM"></textarea>
+                    </div>
+                    
+                    <!-- Create a two-column layout for the specific location field and the note -->
+                    <div class="md:col-span-1">
+                        <label class="block text-sm font-medium text-gray-700" for="entry.541551394">SPECIFIC LOCATION OF INCIDENT <span class="text-red-500">*</span></label>
+                        <textarea name="entry.541551394" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-white" rows="1"></textarea>
+                    </div>
+                    <div class="md:col-span-1 flex items-center">
+                        <p class="text-sm text-[#468FB8]">
+                        <strong class="underline">Note:</strong><br>
+                        - Routing takes place for the Location chosen in the "Location of Incident" field.<br>
+                        </p>
+                    </div>
+                  </div>                  
+           
+             <!-- Description of incident section -->
             <div>
-                <label class="block text-sm font-medium text-gray-700">INSTITUTION WHERE INCIDENT OCCURRED</label>
-                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="KK Women's and Children's Hospital" readonly>
-            </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700">CAMPUS / SITE <span class="text-red-500">*</span></label>
-                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="Ward 13" readonly>
-            </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700">INCIDENT DATE <span class="text-red-500">*</span></label>
-                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="20/03/2025" readonly>
-            </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700">INCIDENT TIME (24HRS FORMAT)<span class="text-red-500">*</span></label>
-                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="14:23" readonly>
-            </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700">SPECIFIC LOCATION OF INCIDENT<span class="text-red-500">*</span></label>
-                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="Bedside" readonly>
-                </div>
-            </div>
-            <div>
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSdQrvgCgzNkV5rpjBZLVGuX9e6qpEv2qOAs61l-JN4zyDOVjQ/formResponse" method="POST">
-                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdQrvgCgzNkV5rpjBZLVGuX9e6qpEv2qOAs61l-JN4zyDOVjQ/formResponse" method="POST">
                         <label class="block text-sm font-medium text-gray-700" for="entry.97944937">
                             DESCRIPTION OF INCIDENT<span class="text-red-500">*</span>
                             <span class="text-[#468FB8] text-xs">(TO ENSURE ESSENTIAL INFORMATION IS CAPTURED, THE DESCRIPTION SHOULD CAPTURE 'WHAT', 'WHY', AND 'HOW' OF THE INCIDENT)</span>
                         </label>
-                        <textarea name="entry.1363750727" rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500" placeholder="4000 characters"></textarea><br>
+                        <textarea name="entry.97944937" required rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500" placeholder="4000 characters"></textarea><br>
                         
                         <div class="mb-2">
                             <p class="text-sm text-red-500 underline bold">
@@ -127,25 +136,25 @@
                         </div><br>
                         <div class="flex">
                                 <!-- Left Container (Question and Checklist) -->
-                            <div class="w-1/2">
-                                <label class="block text-sm font-medium text-gray-700" for="entry.XXXXXX">
-                                    SPECIAL TRIGGERS FOR ESCALATION
-                                </label>
+                                <div class="w-1/2">
+                                    <label class="block text-sm font-medium text-gray-700" for="entry.123456789">
+                                        SPECIAL TRIGGERS FOR ESCALATION
+                                    </label>
                                 
-                                <div class="mt-2">
-                                    <input type="checkbox" id="potential_complaints" name="special_triggers" value="Potential Complaints">
-                                    <label for="potential_complaints" class="text-sm">Potential Complaints</label><br>
-                        
-                                    <input type="checkbox" id="potential_legal" name="special_triggers" value="Potential Legal">
-                                    <label for="potential_legal" class="text-sm">Potential Legal</label><br>
-                        
-                                    <input type="checkbox" id="potential_media" name="special_triggers" value="Potential Media">
-                                    <label for="potential_media" class="text-sm">Potential Media</label><br>
-                        
-                                    <input type="checkbox" id="research_related" name="special_triggers" value="Research Related">
-                                    <label for="research_related" class="text-sm">Research Related</label><br>
-                                </div>
-                            </div>
+                                    <div class="mt-2">
+                                        <input type="checkbox" id="potential_complaints" name="entry.1043594754" value="Potential Complaints">
+                                        <label for="potential_complaints" class="text-sm">Potential Complaints</label><br>
+                                
+                                        <input type="checkbox" id="potential_legal" name="entry.1043594754" value="Potential Legal">
+                                        <label for="potential_legal" class="text-sm">Potential Legal</label><br>
+                                
+                                        <input type="checkbox" id="potential_media" name="entry.1043594754" value="Potential Media">
+                                        <label for="potential_media" class="text-sm">Potential Media</label><br>
+                                
+                                        <input type="checkbox" id="research_related" name="entry.1043594754" value="Research Related">
+                                        <label for="research_related" class="text-sm">Research Related</label><br>
+                                    </div>
+                                </div>                                
                             
                                 <!-- Right Container (Help Definition as a Numbered List) -->
                                 <div class="w-1/2 p-4">
@@ -160,42 +169,44 @@
                             </div>
                         </div>                          
                         
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700" for="entry.97944937">
-                            SHORT JUSTIFICATION OF SPECIAL TRIGGER
-                        <textarea name="entry.1363750727" rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500"></textarea><br>
-                    </div>  
-                    <div class="w-1/2">
-                        <!-- Question 1: Near Miss -->
-                        <div class="mb-4">
-                            <p class="text-sm font-medium text-gray-700">IS THIS INCIDENT A NEAR MISS?</p>
-                            <div class="mt-2 flex space-x-6">
-                                <label class="flex items-center">
-                                    <input type="radio" name="near_miss" value="Yes" class="form-radio text-[#468FB8]">
-                                    <span class="ml-2">Yes</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="near_miss" value="No" class="form-radio text-[#468FB8]">
-                                    <span class="ml-2">No</span>
-                                </label>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700" for="entry.97944937">
+                                SHORT JUSTIFICATION OF SPECIAL TRIGGER
+                            </label>
+                            <textarea name="entry.617821649" rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500"></textarea>
+                        </div><br>
+                        
+                        <div class="w-1/2">
+                            <!-- Question 1: Near Miss -->
+                            <div class="mb-4">
+                                <p class="text-sm font-medium text-gray-700">IS THIS INCIDENT A NEAR MISS?</p>
+                                <div class="mt-2 flex space-x-6">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="entry.269174021" value="Yes" class="form-radio text-[#468FB8]">
+                                        <span class="ml-2">Yes</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="entry.269174021" value="No" class="form-radio text-[#468FB8]">
+                                        <span class="ml-2">No</span>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                    
-                        <!-- Question 2: Potential SRE -->
-                        <div class="mb-4">
-                            <p class="text-sm font-medium text-gray-700">IS THIS INCIDENT A POTENTIAL SERIOUS REPORTABLE EVENT (SRE)?</p>
-                            <div class="mt-2 flex space-x-6">
-                                <label class="flex items-center">
-                                    <input type="radio" name="potential_sre" value="Yes" class="form-radio text-[#468FB8]">
-                                    <span class="ml-2">Yes</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="potential_sre" value="No" class="form-radio text-[#468FB8]">
-                                    <span class="ml-2">No</span>
-                                </label>
+                        
+                            <!-- Question 2: Potential SRE -->
+                            <div class="mb-4">
+                                <p class="text-sm font-medium text-gray-700">IS THIS INCIDENT A POTENTIAL SERIOUS REPORTABLE EVENT (SRE)?</p>
+                                <div class="mt-2 flex space-x-6">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="entry.791271810" value="Yes" class="form-radio text-[#468FB8]">
+                                        <span class="ml-2">Yes</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="entry.791271810" value="No" class="form-radio text-[#468FB8]">
+                                        <span class="ml-2">No</span>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                    </div><br>
+                        </div><br>                 
             
             <div class="border-b-2 border-gray-300 mb-2"></div>        
             <div class="mb-2">
@@ -206,7 +217,7 @@
                         <label class="block text-sm font-medium text-gray-700" for="entry.97944937">
                             PARTICIPANT ID
                         </label>
-                        <textarea name="entry.XXXXX" rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500"></textarea>
+                        <textarea name="entry.1363750727" required rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500"></textarea>
                     </div><br>                    
 
                     <div class="flex justify-center">
@@ -226,14 +237,7 @@
                     }
                 </style>
             </div>
-                  
-            
-        <div class="mb-6">
-            <p class="text-sm text-gray-600 ">
-                <strong>Note:</strong><br>
-                - Routing takes place for the Location chosen in the "Location of Incident" field.
-            </p>
-        </div>
     </div>
 </body>
 </html>
+
