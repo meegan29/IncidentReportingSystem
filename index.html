@@ -58,11 +58,13 @@
                     </label>
                 </div>
             </div>
-        </div>
-        
-        
-        
-        <div class="border-b-2 border-gray-300 mb-6"></div>
+        </div><br>        
+
+        <div class="border-b-2 border-gray-300 mb-2"></div>        
+        <div class="mb-2">
+            <h2 class="text-lg font-semibold text-[#468FB8]">Basic Details</h2></div>
+        <div class="border-b-2 border-gray-300 mb-6"></div><br>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
                 <label class="block text-sm font-medium text-gray-700">REPORT NUMBER</label>
@@ -207,26 +209,35 @@
                                 </div>
                             </div>
                         </div><br>                 
-            
-            <div class="border-b-2 border-gray-300 mb-2"></div>        
-            <div class="mb-2">
-                <h2 class="text-lg font-semibold text-[#468FB8]">Reporting Person's Details</h2></div>
-            <div class="border-b-2 border-gray-300 mb-6"></div>
-                    
+                </form>
+                
+                <!-- Reporting Person's Details Section Title -->
+                <div class="border-b-2 border-gray-300 mb-2"></div>
+                <div class="mb-2">
+                    <h2 class="text-lg font-semibold text-[#468FB8]">Reporting Person's Details Section</h2>
+                </div>
+                <div class="border-b-2 border-gray-300 mb-6"></div>
+                
+                <!-- Reporting Person's Details Input Section -->
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSdQrvgCgzNkV5rpjBZLVGuX9e6qpEv2qOAs61l-JN4zyDOVjQ/formResponse" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div class="w-1/3">
-                        <label class="block text-sm font-medium text-gray-700" for="entry.97944937">
-                            PARTICIPANT ID
+                        <label class="block text-sm font-medium text-gray-700" for="entry.1363750727">
+                        PARTICIPANT ID
                         </label>
-                        <textarea name="entry.1363750727" required rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500"></textarea>
-                    </div><br>                    
-
-                    <div class="flex justify-center">
-                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">
-                            Submit Form
-                        </button>
+                        <input type="text" name="entry.1363750727" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500">
+                    </div>
+                    <!-- Remove the <br> here -->
                     </div>
                     
-                    </form>                    
+                    <!-- Place the submit button in its own container for centering -->
+                    <div class="flex justify-center">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">
+                        Submit Form
+                    </button>
+                    </div>
+                </form>  
+
                 <style>
                     textarea::placeholder {
                         color: #B0B0B0; /* Grey placeholder text */
