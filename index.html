@@ -4,56 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incident Reporting System</title>
-    <link rel="stylesheet" href="styles.css">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body>
-    <div class="container">
-        <h2>Incident Reporting System</h2>
-        
-        <!-- Pre-filled Information Section -->
-        <div class="pre-filled-info">
-            <div class="row">
-                <div class="field">
-                    <label>Date:</label>
-                    <input type="text" value="20th March 2025" readonly>
-                </div>
-                <div class="field">
-                    <label>Time:</label>
-                    <input type="text" value="14:32" readonly>
-                </div>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-semibold text-[#468FB8]"><i class="fas fa-cloud"></i> Incident : INC-0034142</h1>
+            <div class="space-x-2">
+                <button class="bg-gray-100 text-gray-500 px-4 py-2 rounded-md"><i class="fas fa-save"></i> Save</button>
+                <button class="bg-white text-[#468FB8] px-4 py-2 rounded-md border border-gray-300"><i class="fas fa-times"></i> Close</button>
+                <button class="bg-white text-[#468FB8] px-4 py-2 rounded-md border border-gray-300"><i class="fas fa-plus"></i> New</button>
+                <button class="bg-white text-[#468FB8] px-4 py-2 rounded-md border border-gray-300"><i class="fas fa-wrench"></i></button>                
             </div>
-            <div class="row">
-                <div class="field">
-                    <label>Patient Name:</label>
-                    <input type="text" value="Jane Doe" readonly>
-                </div>
-                <div class="field">
-                    <label>Staff Involved:</label>
-                    <input type="text" value="Nurse Abby, Nurse Betty" readonly>
-                </div>
+        </div>
+        <div class="border-b border-gray-300 mb-6">
+            <ul class="flex space-x-4">
+                <li class="pb-2">New Incident</li>
+                <li class="pb-2 border-b-2 border-[#468FB8] text-[#468FB8]">General Information</li>
+            </ul>
+        </div><br>
+        <div class="mb-6">
+            <p class="text-sm text-[#468FB8]">
+                <strong class="underline">Please Note:</strong><br>
+                - Please click "Save" whenever you make an update to the page.<br>
+                - All mandatory fields of this page must be filled up to proceed with the incident submission.
+            </p><br>
+        </div>
+        <div class="border-b-2 border-gray-300 mb-2"></div><br>
+        <div class="flex mb-6">
+            <!-- Left Column: Text -->
+            <div class="w-1/2">
+                <p class="text-sm text-[#468FB8]">
+                   <strong class="underline">Note:</strong><br>
+                   - You can only delete the case that is in draft status.</p><br>
             </div>
-            <div class="row">
-                <div class="field">
-                    <label>Location:</label>
-                    <input type="text" value="Building 32, Ward 13, Bed 12" readonly>
+            
+            <!-- Right Column: Multiple Choice Question -->
+            <div class="w-1/2 p-4">
+                <p class="text-sm font-medium text-gray-700">DELETE RECORD?</p>
+                <div class="mt-2 flex items-center">
+                    <!-- Save as draft option -->
+                    <label class="inline-flex items-center mr-4">
+                        <input type="radio" name="delete_record" value="Save as draft" class="form-radio text-[#468FB8]" checked>
+                        <span class="ml-2">Save as draft</span>
+                    </label>
+                    
+                    <!-- Delete option (to the right of Save as draft) -->
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="delete_record" value="Delete" class="form-radio text-[#468FB8]">
+                        <span class="ml-2">Delete</span>
+                    </label>
                 </div>
             </div>
         </div>
         
         
-        <!-- Incident Reporting Form -->
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdQrvgCgzNkV5rpjBZLVGuX9e6qpEv2qOAs61l-JN4zyDOVjQ/formResponse">
-            <label for="entry.1363750727">Participant ID</label><br>
-            <textarea name="entry.1363750727" rows="1"></textarea><br>
+        
+        <div class="border-b-2 border-gray-300 mb-6"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">REPORT NUMBER</label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="INC-0034142" readonly>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">CREATED DATE</label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="20/02/2025" readonly>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">CREATED TIME</label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="09:56" readonly>
+            </div>
+        </div><br>
+        
+        <!-- Incident Details Section -->
+        <div class="border-b-2 border-gray-300 mb-2"></div>        
+            <div class="mb-2">
+                <h2 class="text-lg font-semibold text-[#468FB8]">Incident Details</h2></div>
+            <div class="border-b-2 border-gray-300 mb-6"></div><br>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">INSTITUTION WHERE INCIDENT OCCURRED</label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="KK Women's and Children's Hospital" readonly>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">CAMPUS / SITE <span class="text-red-500">*</span></label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="Ward 13" readonly>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">INCIDENT DATE <span class="text-red-500">*</span></label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="20/03/2025" readonly>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">INCIDENT TIME (24HRS FORMAT)<span class="text-red-500">*</span></label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="14:23" readonly>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">SPECIFIC LOCATION OF INCIDENT<span class="text-red-500">*</span></label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100" value="Bedside" readonly>
+                </div>
+            </div>
+            <div>
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSdQrvgCgzNkV5rpjBZLVGuX9e6qpEv2qOAs61l-JN4zyDOVjQ/formResponse" method="POST">
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdQrvgCgzNkV5rpjBZLVGuX9e6qpEv2qOAs61l-JN4zyDOVjQ/formResponse" method="POST">
+                        <label class="block text-sm font-medium text-gray-700" for="entry.97944937">
+                            DESCRIPTION OF INCIDENT<span class="text-red-500">*</span>
+                            <span class="text-[#468FB8] text-xs">(TO ENSURE ESSENTIAL INFORMATION IS CAPTURED, THE DESCRIPTION SHOULD CAPTURE 'WHAT', 'WHY', AND 'HOW' OF THE INCIDENT)</span>
+                        </label>
+                        <textarea name="entry.1363750727" rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500" placeholder="4000 characters"></textarea><br>
+                        
+                        <div class="mb-2">
+                            <p class="text-sm text-red-500 underline bold">
+                                <strong>Important Note:</strong></p>
+                            </div>
+                        <div>
+                            <p class="text-sm text-red-500 italic">
+                                Please leave it blank if you are unsure.<br>
+                                Note that an email notification will be sent to senior management upon checking the boxes below. This action cannot be undone.
+                            </p>
+                        </div><br>
+                        <div class="flex">
+                                <!-- Left Container (Question and Checklist) -->
+                            <div class="w-1/2">
+                                <label class="block text-sm font-medium text-gray-700" for="entry.XXXXXX">
+                                    SPECIAL TRIGGERS FOR ESCALATION
+                                </label>
+                                
+                                <div class="mt-2">
+                                    <input type="checkbox" id="potential_complaints" name="special_triggers" value="Potential Complaints">
+                                    <label for="potential_complaints" class="text-sm">Potential Complaints</label><br>
+                        
+                                    <input type="checkbox" id="potential_legal" name="special_triggers" value="Potential Legal">
+                                    <label for="potential_legal" class="text-sm">Potential Legal</label><br>
+                        
+                                    <input type="checkbox" id="potential_media" name="special_triggers" value="Potential Media">
+                                    <label for="potential_media" class="text-sm">Potential Media</label><br>
+                        
+                                    <input type="checkbox" id="research_related" name="special_triggers" value="Research Related">
+                                    <label for="research_related" class="text-sm">Research Related</label><br>
+                                </div>
+                            </div>
+                            
+                                <!-- Right Container (Help Definition as a Numbered List) -->
+                                <div class="w-1/2 p-4">
+                                    <p class="text-[#468FB8] text-sm underline mb-2">Help Definitions:</p>
+                                    <ol class="text-[#468FB8] text-sm list-decimal pl-5 space-y-3">
+                                        <li><strong class="italic">Potential Complaint:</strong> Incident has potential for a person to lodge a formal complaint to institution senior management, Singilealth and/or MOH.</li>
+                                        <li><strong class="italic">Potential Legal:</strong> Incident has potential to have legal action initiated/the use of a lawyer or a court to settle a disagreement.</li>
+                                        <li><strong class="italic">Potential Media:</strong> Incident has potential to make it to mainstream media, social apps (applications), and blogs.</li>
+                                        <li><strong class="italic">Research Related:</strong> Incident that is defined by falsification, fabrication and/or plagiarism, one that can seriously damage the credibility and reputation of the researcher, institution, and journal.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>                          
+                        
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700" for="entry.97944937">
+                            SHORT JUSTIFICATION OF SPECIAL TRIGGER
+                        <textarea name="entry.1363750727" rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500"></textarea><br>
+                    </div>  
+                    <div class="w-1/2">
+                        <!-- Question 1: Near Miss -->
+                        <div class="mb-4">
+                            <p class="text-sm font-medium text-gray-700">IS THIS INCIDENT A NEAR MISS?</p>
+                            <div class="mt-2 flex space-x-6">
+                                <label class="flex items-center">
+                                    <input type="radio" name="near_miss" value="Yes" class="form-radio text-[#468FB8]">
+                                    <span class="ml-2">Yes</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="near_miss" value="No" class="form-radio text-[#468FB8]">
+                                    <span class="ml-2">No</span>
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <!-- Question 2: Potential SRE -->
+                        <div class="mb-4">
+                            <p class="text-sm font-medium text-gray-700">IS THIS INCIDENT A POTENTIAL SERIOUS REPORTABLE EVENT (SRE)?</p>
+                            <div class="mt-2 flex space-x-6">
+                                <label class="flex items-center">
+                                    <input type="radio" name="potential_sre" value="Yes" class="form-radio text-[#468FB8]">
+                                    <span class="ml-2">Yes</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="potential_sre" value="No" class="form-radio text-[#468FB8]">
+                                    <span class="ml-2">No</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div><br>
+            
+            <div class="border-b-2 border-gray-300 mb-2"></div>        
+            <div class="mb-2">
+                <h2 class="text-lg font-semibold text-[#468FB8]">Reporting Person's Details</h2></div>
+            <div class="border-b-2 border-gray-300 mb-6"></div>
+                    
+                    <div class="w-1/3">
+                        <label class="block text-sm font-medium text-gray-700" for="entry.97944937">
+                            PARTICIPANT ID
+                        </label>
+                        <textarea name="entry.XXXXX" rows="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-500"></textarea>
+                    </div><br>                    
 
-            <label for="entry.97944937">Describe the incident:</label><br>
-            <textarea name="entry.97944937" rows="4"></textarea><br>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">
+                            Submit Form
+                        </button>
+                    </div>
+                    
+                    </form>                    
+                <style>
+                    textarea::placeholder {
+                        color: #B0B0B0; /* Grey placeholder text */
+                    }
+                
+                    textarea:focus {
+                        color: #000; /* Black text when focused */
+                    }
+                </style>
+            </div>
+                  
             
-            <label for="entry.617821649">What actions will you take to remedy the situation?</label><br>
-            <textarea name="entry.617821649" rows="4"></textarea><br>
-            
-            <button type="submit">Submit Form</button>
-        </form>
+        <div class="mb-6">
+            <p class="text-sm text-gray-600 ">
+                <strong>Note:</strong><br>
+                - Routing takes place for the Location chosen in the "Location of Incident" field.
+            </p>
+        </div>
     </div>
 </body>
 </html>

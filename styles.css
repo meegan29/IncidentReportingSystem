@@ -1,79 +1,107 @@
 body {
+    background-color: #f3f4f6;
+    padding: 24px;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
 }
+
 .container {
-    background: white;
-    padding: 20px;
+    max-width: 1120px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 24px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-h2 {
-    text-align: center;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
 }
-label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2563eb;
 }
-input, select, textarea {
-    width: 95%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+
+.header .buttons button {
+    padding: 8px 16px;
     border-radius: 4px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-button {
-    background: #007BFF;
-    color: white;
     border: none;
-    padding: 10px;
-    width: 50%;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    display: block;
-    margin: 10px auto;
-    text-align: center;
-}
-button:hover {
-    background: #0056b3;
-}
-textarea {
-    resize: none;
-}
-.pre-filled-info {
-    background: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
-    grid-template-rows: repeat(3, auto); /* Three rows: one for each row of fields */
-    gap: 10px;
+    margin-left: 8px;
 }
 
-.pre-filled-info label {
-    font-weight: bold;
-    display: block;
+.button-primary {
+    background-color: #2563eb;
+    color: white;
 }
 
-.pre-filled-info input {
-    width: 80%; /* Input fields take full width of each grid item */
+.button-secondary {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.nav {
+    border-bottom: 1px solid #d1d5db;
+    margin-bottom: 24px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 16px;
+}
+
+.nav ul li {
+    padding-bottom: 8px;
+}
+
+.nav ul .active {
+    border-bottom: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+.note {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
     padding: 8px;
-    border: none;
-    background: #ebebeb;
-    color: #666;
+    border: 1px solid #d1d5db;
     border-radius: 4px;
-    cursor: not-allowed;
 }
 
+.radio-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
+.radio-group label {
+    font-size: 14px;
+    color: #6b7280;
+}
